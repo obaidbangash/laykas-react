@@ -1,0 +1,47 @@
+.guarantee-wrapper {
+  padding: 55px 0 150px;
+}
+.guarantee-card {
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0px 10px 40px 10px rgba(140, 152, 164, 0.18);
+  -webkit-box-shadow: 0px 10px 40px 10px rgba(140, 152, 164, 0.18);
+  -moz-box-shadow: 0px 10px 40px 10px rgba(140, 152, 164, 0.18);
+}
+.guarantee-item {
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  padding-right: 13px;
+}
+.guarantee-card .p {
+  margin-bottom: 16px;
+  max-width: 214px;
+  color: #2d3748;
+  font-weight: 700;
+}
+.guarantee-card ul {
+  padding: 0;
+  margin-top: 24px;
+  list-style: none;
+  display: flex;
+  align-self: center;
+  flex-wrap: wrap;
+}
+.guarantee-card ul li {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.guarantee-card ul li:last-child {
+  margin-bottom: 0;
+}
+.guarantee-card ul li span {
+  display: inline-block;
+  padding-left: 18px;
+}
+.guarantee-card .guarantee-expend {
+  padding-left: 32px;
+}
+.guarantee-card .guarantee-expend p {
+  margin-bottom: 45px;
+}

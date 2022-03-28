@@ -1,0 +1,28 @@
+.guaide-line {
+  background-color: #f8f9fc;
+  padding: 64px 0;
+  text-align: center;
+}
+.guaide-line .h3 {
+  margin-bottom: 34px;
+}
+.guaide-line .btn-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.guaide-line .btn-wrapper .main-btn {
+  margin: 0 8px;
+}
+.guaide-line .btn-wrapper .main-btn img {
+  margin-right: 23px;
+}
+.guaide-line .btn-wrapper .main-btn:first-child {
+  background-color: #125ce4;
+}
+
+.guaide-line .btn-wrapper .main-btn:last-child {
+  color: #125ce4;
+  border-color: #125ce4;
+}

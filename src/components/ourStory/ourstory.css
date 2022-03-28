@@ -1,0 +1,35 @@
+.our-story {
+  padding: 65px 0 0;
+}
+
+.our-story .our-story-content {
+  max-width: 549px;
+}
+
+.our-story .h3 {
+  margin-bottom: 24px;
+}
+.our-story .p {
+  color: #646e73;
+}
+
+.our-story .our-story-img {
+  max-width: 500px;
+  margin-left: auto;
+}
+
+.our-story .who-we-wrapper {
+  margin-top: 65px;
+  padding-bottom: 64px;
+  position: relative;
+}
+.our-story .who-we-wrapper::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 768px;
+  height: 1px;
+  transform: translateX(-50%);
+  background-color: #bdbdbd;
+}

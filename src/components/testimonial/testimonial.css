@@ -1,0 +1,19 @@
+.testimonial-wrapper {
+  padding: 45px 0 55px;
+  text-align: center;
+}
+.testimonial-wrapper .main-title {
+  margin-bottom: 5px;
+}
+.testimonial-wrapper .p {
+  margin-bottom: 48px;
+}
+.testimonial-wrapper .main-btn {
+  margin-bottom: 32px;
+}
+.testimonial-wrapper .main-btn span {
+  color: #ffffff;
+}
+.testimonial-wrapper .main-btn:hover span {
+  color: #000000;
+}

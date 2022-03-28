@@ -1,0 +1,12 @@
+.platform-wrapper {
+  padding: 90px 0 99px;
+}
+.platform-header {
+  text-align: center;
+  max-width: 735px;
+  margin: 0 auto 78px;
+}
+
+.platform-header .main-title {
+  margin-bottom: 18px;
+}

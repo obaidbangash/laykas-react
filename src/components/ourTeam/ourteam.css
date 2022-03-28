@@ -1,0 +1,23 @@
+.our-team {
+  padding: 65px 0;
+  text-align: center;
+}
+
+.our-team p {
+  margin-bottom: 32px;
+}
+.our-team .h3 {
+  display: block;
+  margin-bottom: 16px;
+}
+.our-team .container > span {
+  display: block;
+  margin-bottom: 16px;
+  color: #646e73;
+  font-weight: 700;
+  line-height: 19px;
+}
+
+.our-team .team-cards-wrapper {
+  margin-bottom: 32px;
+}

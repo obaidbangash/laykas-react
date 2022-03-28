@@ -1,0 +1,31 @@
+.flexable-option {
+  padding: 58px 0 83px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.flexable-content {
+  max-width: 549px;
+}
+.flexable-content > span {
+  line-height: 19px;
+  color: #f9b934;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.flexable-content .h3 {
+  margin-bottom: 26px;
+}
+.flexable-img {
+  height: 489px;
+  width: 100%;
+}
+.flexable-img img {
+  max-width: 489px;
+  margin-left: auto;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}

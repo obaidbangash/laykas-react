@@ -1,0 +1,17 @@
+.company-wrapper {
+  background-color: #f8f9fc;
+  padding: 66px 0;
+}
+
+.company-wrapper .companies-content {
+  max-width: 549px;
+}
+
+.company-wrapper .companies-content .h3 {
+  margin-bottom: 24px;
+  color: #2d3748;
+}
+
+.company-wrapper .companies-content .p {
+  color: #646e73;
+}
