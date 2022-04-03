@@ -11,6 +11,8 @@ function CommentBox(props) {
   const handleCommentSubmit = (e) => {
     e.preventDefault();
 
+
+
     const { updateCommentList, toggleCommentBox, toggleButtonsGroup } = props;
 
     if (comment) {
