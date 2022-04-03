@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import "./CommentBox.css";
 
 function CommentBox(props) {
-  console.log(props.comments, "comments")
   const { hidden, selectedText } = props;
   const [comment, setComment] = useState({ id: '', heading: '', label: '' });
   const [label, setLabel] = useState(false);

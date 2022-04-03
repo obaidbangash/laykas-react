@@ -43,7 +43,6 @@ function LandingPage(props) {
 
   const saveAndRestoreSelection = () => {
     const savedSelection = saveSelection();
-    console.log("savedSelection", savedSelection);
     setSelectedRange(savedSelection);
     toggleCommentBox();
     restoreSelection(savedSelection);
@@ -60,10 +59,6 @@ function LandingPage(props) {
   const updateCommentList = (newComment) => {
     setComments([...comments, newComment]);
   };
-
-  useEffect(() => {
-    console.log("comments===", comments);
-  }, [comments]);
 
   const [selectedText, setSelectedText] = useState("");
 
