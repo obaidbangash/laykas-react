@@ -1,0 +1,50 @@
+.comment-box {
+  max-width: 280px;
+  width: 100%;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  position: fixed;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0px 8px 42px 0px rgb(201 209 228 / 28%);
+  -webkit-box-shadow: 0px 8px 42px 0px rgb(201 209 228 / 28%);
+  -moz-box-shadow: 0px 8px 42px 0px rgba(201, 209, 228, 0.28);
+}
+
+.comment-box__text-area {
+  border: 1px solid #f9e6f1;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  outline: none;
+  resize: none;
+  width: 100%;
+  min-height: auto;
+  position: relative;
+  padding: 15px;
+  box-sizing: border-box;
+  display: block;
+}
+
+.comment-box .visuallyhidden {
+  margin-bottom: 20px;
+  display: block;
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 700;
+  text-transform: capitalize;
+  color: #666;
+}
+.comment-box__submit-button {
+  font-size: 16px;
+  font-weight: 500;
+  background: #3b43d6;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
