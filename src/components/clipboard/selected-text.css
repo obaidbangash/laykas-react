@@ -4,14 +4,20 @@
 .selected-section h3 {
   font-size: 24px;
   line-height: 30px;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
 }
 .selected-section p,
 .selected-section a {
-  color: #2d3748;
-  margin-bottom: 20px;
-  font-size: 18px;
+  font-size: 17px;
+  color: #000;
+  letter-spacing: 0.7px;
   line-height: 24px;
+  margin-bottom: 20px;
+}
+.selected-section a {
+  font-weight: 500;
+  text-transform: capitalize;
 }
 .selected-section h6 {
   color: #2d3748;
@@ -19,10 +25,13 @@
   line-height: 24px;
 }
 .selected-section .selected-card {
-  padding: 40px 20px;
+  padding: 20px 20px 10px;
   border-radius: 7px;
-  border: 1px solid #f9e6f1;
-  box-shadow: 0px 5px 4px 0px rgb(0 0 0 / 28%);
-  -webkit-box-shadow: 0px 5px 4px 0px rgb(0 0 0 / 28%);
-  -moz-box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.28);
+  box-shadow: 0px 2px 13px 0px rgb(0 0 0 / 28%);
+  -webkit-box-shadow: 0px 2px 13px 0px rgb(0 0 0 / 28%);
+  -moz-box-shadow: 0px 2px 13px 0px rgba(0, 0, 0, 0.28);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
 }
