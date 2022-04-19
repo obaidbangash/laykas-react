@@ -18,16 +18,19 @@ import {
 
 function CommentBox(props) {
   const { hidden, selectedText } = props;
-  const [comment, setComment] = useState({ id: '', heading: '', label: '' });
+  const [comment, setComment] = useState({ id: '', heading: '', customText: '', label: '' });
   const [label, setLabel] = useState(false);
-  const [updatedText, setUpdatedText] = useState([]);
   const refActionColor = React.useRef();
   const [isColorPopoverOpen, setColorPopoverOpen] = useState(false);
   const [color, setColor] = useState("");
   const [bgColor, setBgColor] = useState('white');
 
 
-
+  const reset = () => {
+    setComment({
+      id: '', heading: '', label: '', customText: ''
+    });
+  };
   const handleCommentSubmit = (e) => {
     e.preventDefault();
     const { updateCommentList, toggleCommentBox, toggleButtonsGroup } = props;
@@ -41,13 +44,13 @@ function CommentBox(props) {
         id: uniqueId,
         selectedText,
         heading: comment.heading,
+        customText: comment.customText,
         label: comment.label,
         bgColor: bgColor,
       });
       toggleButtonsGroup();
       toggleCommentBox();
       reset();
-      // setUpdatedText([...comment])
     }
   };
 
@@ -57,17 +60,19 @@ function CommentBox(props) {
     setComment(data);
   };
 
+  const handleCutomChange = (e) => {
+    const data = { ...comment }
+    data.customText = e.target.value;
+    setComment(data);
+  }
+
   const handleLabelChange = (e) => {
     const data = { ...comment }
     data.label = e.target.value;
     setComment(data);
   };
 
-  const reset = () => {
-    setComment({
-      id: '', heading: '', label: ''
-    });
-  };
+
 
   const wrapSelectedTextWithId = (uniqueId) => {
     const markWrapper = document.createElement("mark");
@@ -78,11 +83,7 @@ function CommentBox(props) {
 
 
   return (
-
     <>
-
-
-
       <div hidden={hidden} >
         <form className="comment-box" onSubmit={handleCommentSubmit} style={{ backgroundColor: theme.custom.palette.noteBackground[bgColor] }}>
           <label htmlFor="commentBox" className="visuallyhidden">
@@ -96,8 +97,17 @@ function CommentBox(props) {
           />
           <label htmlFor="select_text" className="visuallyhidden">Selected Text</label>
           {
-            selectedText !== '' ? <textarea id="select_text" className="comment-box__text-area" value={selectedText}> </textarea> :
-              <textarea className="comment-box__text-area" value='' placeholder="Add To Do"> </textarea>
+            selectedText !== '' ?
+              <textarea id="select_text" className="comment-box__text-area" value={selectedText}> </textarea> :
+              <textarea className="comment-box__text-area" placeholder="Add To Do" onChange={handleCutomChange}> </textarea>
+          }
+          {
+            label && <input
+              className="comment-box__text-area "
+              placeholder="Add label here"
+              onChange={handleLabelChange}
+              value={comment.label}
+            />
           }
 
           <div className="add-label d-flex">
@@ -123,24 +133,18 @@ function CommentBox(props) {
             </Tooltip>
             <div className="label-wrapper">
               {
-                label ? <input
-                  className="comment-box__text-area "
-                  placeholder="Add label here"
-                  onChange={handleLabelChange}
-                  value={comment.label}
-                />
-                  : <Tooltip title="Add Label">
-                    <IconButton
-                      size="medium"
-                      aria-label="Add Label"
-                    >
-                      <LabelIcon onClick={() => setLabel(true)} fontSize="medium" />
-                    </IconButton>
-                  </Tooltip>
+                <Tooltip title="Add Label">
+                  <IconButton
+                    size="medium"
+                    aria-label="Add Label"
+                  >
+                    <LabelIcon onClick={() => setLabel(true)} fontSize="medium" />
+                  </IconButton>
+                </Tooltip>
               }
             </div>
           </div>
-          <Button variation="primary" type="submit" className="comment-box__submit-button btn-main">
+          <Button variation="outline" type="submit" className=" comment-box__submit-button">
             submit
           </Button>
         </form>
