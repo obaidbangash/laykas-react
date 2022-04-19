@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Content from "./Content";
 import CommentBox from "./CommentBox";
 import HighlightButtonsGroup from "./HighlightButtonsGroup";
-import CommentsList from "./CommentsList";
+import CommentsList from "./ToDoList";
 import { saveSelection, restoreSelection } from "../../util/selection-utils";
 function CopyToClip(props) {
   const default_position = {
@@ -92,7 +92,7 @@ function CopyToClip(props) {
         selectedText={selectedText}
         comments={comments}
       />
-      <CommentsList comments={comments} />
+      <CommentsList comments={comments} setComments={setComments} />
     </div>
   );
 }

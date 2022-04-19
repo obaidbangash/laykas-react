@@ -32,16 +32,10 @@ function Content(props) {
   };
 
 
-  const contentSectionStyles = {
-    textAlign: "justify",
-    background: "#fff",
-    padding: "20px",
-  };
 
   return (
     <div>
       <section
-        style={contentSectionStyles}
         onMouseUp={bubbleUpSelectedRegion}
         onMouseMove={bubbleUpSelectedRegion}
         onKeyUp={bubbleUpEditableSelectedRegion}

@@ -23,6 +23,15 @@
 }
 .add-label {
   margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+.add-label .label-wrapper {
+  display: flex;
+  margin-left: 10px;
+}
+.add-label .label-wrapper svg {
+  color: #000;
 }
 .buttons-group__comment-btn img {
   width: 22px;
@@ -35,4 +44,25 @@
   background: #fff;
   z-index: 500;
   clip-path: polygon(0% 0%, 50% 50%, 100% 0%);
+}
+
+.add-notes-icon {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  padding: 10px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 2px 13px 0px rgb(0 0 0 / 28%);
+  -webkit-box-shadow: 0px 2px 13px 0px rgb(0 0 0 / 28%);
+  -moz-box-shadow: 0px 2px 13px 0px rgba(0, 0, 0, 0.28);
+}
+.add-notes-icon svg {
+  height: 50px;
+  width: 50px;
+  fill: rgb(255, 177, 7);
+  cursor: pointer;
 }
