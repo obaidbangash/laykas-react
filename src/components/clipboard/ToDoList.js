@@ -6,13 +6,9 @@ import { useTheme } from "@material-ui/styles";
 import ColorPopover from "./ColorPopover"
 import "./CommentBox.css";
 import { IconButton, Tooltip } from "@material-ui/core";
-
 import {
   PaletteOutlined as PaletteIcon
 } from "@material-ui/icons";
-
-
-
 
 
 const CommentsList = ({ comments, setComments }) => {
@@ -27,10 +23,10 @@ const CommentsList = ({ comments, setComments }) => {
 
 
   // delete List
-  const onRemove = (i) => {
+  const onRemoveList = (i) => {
     const data = [...comments];
-    const updatedData = data.splice(1, i)
-    setComments(updatedData)
+    const updatedData = data.splice(i, 1)
+    setComments(data)
   }
 
   useEffect(() => {
@@ -52,15 +48,17 @@ const CommentsList = ({ comments, setComments }) => {
             comments?.map((comment, index) => (
               <View key={comment.id} className="selected-card" style={{ backgroundColor: theme.custom.palette.noteBackground[comment.bgColor] }}>
                 <h3>{!comment.heading ? "Title" : comment.heading}</h3>
-                <a href={`#${comment.id}`}>
-                  {comment.selectedText}
-                </a>
+                {comment.selectedText ?
+                  <a href={`#${comment.id}`}>
+                    {comment.selectedText}
+                  </a> :
+                  <p>{comment.customText}</p>
+                }
                 <h6>{comment.label}</h6>
                 <Grid gap="24px"
                   templateColumns="1fr 1fr 1fr 1fr"
                   alignItems="center"
                   justifyContent="center">
-
                   <Tooltip title="Delete List">
                     <IconButton
                       size="medium"
@@ -68,10 +66,12 @@ const CommentsList = ({ comments, setComments }) => {
                       ref={refActionColor}
                       onClick={() => setColorPopoverOpen(true)}
                     >
-                      <DeleteOutlineIcon onClick={() => onRemove(index)} fontSize="medium" />
+                      <DeleteOutlineIcon onClick={() => {
+                        onRemoveList(index)
+                      }} fontSize="medium" />
                     </IconButton>
                   </Tooltip>
-                  <ColorPopover
+                  {/* <ColorPopover
                     anchorEl={refActionColor.current}
                     isOpen={isColorPopoverOpen}
                     onClose={() => setColorPopoverOpen(false)}
@@ -90,7 +90,7 @@ const CommentsList = ({ comments, setComments }) => {
                         fontSize="medium"
                       />
                     </IconButton>
-                  </Tooltip>
+                  </Tooltip> */}
                 </Grid>
               </View>
             ))

@@ -39,12 +39,13 @@
 }
 .comment-box__submit-button {
   font-size: 16px;
-  font-weight: 500;
-  background: #3b43d6;
-  color: #fff;
+  font-weight: 700;
+  color: #125ce4;
+  border-color: #125ce4;
   border-radius: 5px;
-  padding: 10px 25px;
-  border: none;
+  padding: 8px 43px;
+  text-transform: capitalize;
+  /* padding: 7px 25px; */
   outline: none;
   cursor: pointer;
 }
