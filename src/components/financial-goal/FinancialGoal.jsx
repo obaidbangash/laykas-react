@@ -2,8 +2,14 @@ import React from "react";
 import { Grid, View, Button } from "@aws-amplify/ui-react";
 import financialImage from "../../assets/financial-img.png";
 import "./financial-goal.css";
+import { useInView } from "react-intersection-observer";
 
 function FinancialGoal() {
+  const { ref: refAnimation, inView } = useInView({
+    threshold: 1,
+  });
+  const classAnimPlay = inView && "anim-play";
+
   return (
     <div className="financial-goal">
       <div className="container">
@@ -13,11 +19,12 @@ function FinancialGoal() {
             templateRows="10rem 10rem"
             gap="var(--amplify-space-small)"
             alignItems="center"
+            ref={refAnimation}
           >
-            <div className="financial-img">
+            <div className={`anim-fade-in-up financial-img ${classAnimPlay}`}>
               <img src={financialImage} alt="financialImage" />
             </div>
-            <View>
+            <View className={`anim-fade-in-up ${classAnimPlay}`}>
               <div className="financial-content">
                 <h3 className="h3">
                   Take charge of your <span>financial goals.</span>

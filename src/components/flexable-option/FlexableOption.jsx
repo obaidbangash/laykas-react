@@ -2,10 +2,15 @@ import React from "react";
 import { Grid, View, Button } from "@aws-amplify/ui-react";
 import flexableImg from "../../assets/flexable-img.png";
 import flexableBg from "../../assets/flexableBg.png";
-
 import "./flexable-option.css";
+import { useInView } from "react-intersection-observer";
 
 function FlexableOption() {
+  const { ref: refAnimation, inView } = useInView({
+    threshold: 1,
+  });
+  const classAnimPlay = inView && "anim-play";
+
   return (
     <div
       className="flexable-option"
@@ -18,8 +23,9 @@ function FlexableOption() {
           gap="var(--amplify-space-small)"
           alignItems="center"
           display="flex"
+          ref={refAnimation}
         >
-          <View className="flexable-content">
+          <View className={`anim-fade-in-up flexable-content ${classAnimPlay}`}>
             <span>FLEXIBLE OPTIONS</span>
             <h3 className="h3">
               Rest easy about your <span>future.</span>
@@ -31,7 +37,7 @@ function FlexableOption() {
               congue consectetur tellus. Sagittis ac vitae tincidunt id.
             </p>
           </View>
-          <View className="flexable-img">
+          <View className={`anim-fade-in-up flexable-img ${classAnimPlay}`}>
             <img src={flexableImg} alt="flexableImg" />
           </View>
         </Grid>

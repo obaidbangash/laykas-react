@@ -4,8 +4,13 @@ import "@aws-amplify/ui-react/styles.css";
 import "./banner.css";
 import image from "../../assets/acf-img.png";
 import bannerBg from "../../assets/banner-bg.png";
+import { useInView } from "react-intersection-observer";
 
 function Banner() {
+  const { ref: refAnimation, inView } = useInView({
+    threshold: 1,
+  });
+  const classAnimPlay = inView && "anim-play";
   const texts = ["Retirement", "Dreamhome", "College Plan", " Whatever"]; // changing text
 
   const Texts = (props) => {
@@ -89,8 +94,12 @@ function Banner() {
             gap="var(--amplify-space-small)"
             templateColumns="1fr 1fr"
             alignItems="center"
+            ref={refAnimation}
           >
-            <View data-aos-anchor-easing="ease-in-out">
+            <View
+              data-aos-anchor-easing="ease-in-out"
+              className={`anim-fade-in-up ${classAnimPlay}`}
+            >
               <div className="acf-text">
                 <h1>
                   Financial freedom for your{" "}
@@ -115,7 +124,7 @@ function Banner() {
                 </div>
               </div>
             </View>
-            <View>
+            <View className={`anim-fade-in-up ${classAnimPlay}`}>
               <div className="acf-img-wrapper">
                 <img src={image} alt="banner img" />
               </div>

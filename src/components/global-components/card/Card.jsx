@@ -2,9 +2,16 @@ import React from "react";
 import { Button } from "@aws-amplify/ui-react";
 import "./card.css";
 
-function Card({ btnText, description, cardIcon, title, backgroundColor }) {
+function Card({
+  btnText,
+  description,
+  cardIcon,
+  title,
+  backgroundColor,
+  className,
+}) {
   return (
-    <div className="card-wrapper">
+    <div className={`${className} card-wrapper`}>
       <div
         className="card-header"
         style={{ backgroundColor: `${backgroundColor}` }}
