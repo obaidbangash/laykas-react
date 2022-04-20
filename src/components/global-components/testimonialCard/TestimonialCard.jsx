@@ -1,10 +1,17 @@
 import React from "react";
 import "./testimonial-card.css";
 
-function TestimonialCard({ icon, userImg, review, userName, jobTitle }) {
+function TestimonialCard({
+  icon,
+  userImg,
+  review,
+  userName,
+  jobTitle,
+  className,
+}) {
   return (
     <>
-      <div className="testimonial-card-wrapper">
+      <div className={`testimonial-card-wrapper ${className}`}>
         <div className="card-header">
           <img src={icon} alt="" />
         </div>
