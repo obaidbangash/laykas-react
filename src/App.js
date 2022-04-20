@@ -6,15 +6,13 @@ import FaqPage from './pages/FaqPage';
 import Header from './components/header/Header';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { light } from "./theme";
-import { ThemeProvider, CssBaseline } from "@material-ui/core";
+import { ThemeProvider } from "@material-ui/core";
 function App() {
 
   return (
     <>
 
       <ThemeProvider theme={light}>
-        {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-        <CssBaseline />
         <Router>
           <Header />
           <Routes>
