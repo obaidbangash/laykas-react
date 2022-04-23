@@ -8,7 +8,7 @@ import { useInView } from "react-intersection-observer";
 
 function Banner() {
   const { ref: refAnimation, inView } = useInView({
-    threshold: 1,
+    threshold: 0.45,
   });
   const classAnimPlay = inView && "anim-play";
   const texts = ["Retirement", "Dreamhome", "College Plan", " Whatever"]; // changing text

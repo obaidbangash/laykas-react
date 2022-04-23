@@ -9,7 +9,7 @@ import { useInView } from "react-intersection-observer";
 
 function Testimonial() {
   const { ref: refAnimation, inView } = useInView({
-    threshold: 1,
+    threshold: 0.45,
   });
   const classAnimPlay = inView && "anim-play";
   return (

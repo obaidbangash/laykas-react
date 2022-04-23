@@ -7,7 +7,6 @@ import ColorPopover from "./ColorPopover"
 import "./CommentBox.css";
 import { IconButton, Tooltip } from "@material-ui/core";
 import LabelIcon from '@material-ui/icons/Label';
-
 import {
   PaletteOutlined as PaletteIcon
 } from "@material-ui/icons";
@@ -18,17 +17,16 @@ import {
 
 function CommentBox(props) {
   const { hidden, selectedText } = props;
-  const [comment, setComment] = useState({ id: '', heading: '', customText: '', label: '' });
+  const [comment, setComment] = useState({ id: '', heading: '', customText: '', label: '', posted_date: '' });
   const [label, setLabel] = useState(false);
   const refActionColor = React.useRef();
   const [isColorPopoverOpen, setColorPopoverOpen] = useState(false);
   const [color, setColor] = useState("");
   const [bgColor, setBgColor] = useState('white');
 
-
   const reset = () => {
     setComment({
-      id: '', heading: '', label: '', customText: ''
+      id: '', heading: '', label: '', customText: '', posted_date: ''
     });
   };
   const handleCommentSubmit = (e) => {
@@ -39,7 +37,6 @@ function CommentBox(props) {
       const uniqueId = Date.now();
 
       wrapSelectedTextWithId(uniqueId);
-
       updateCommentList({
         id: uniqueId,
         selectedText,
@@ -47,10 +44,16 @@ function CommentBox(props) {
         customText: comment.customText,
         label: comment.label,
         bgColor: bgColor,
+        posted_date: new Date(),
       });
       toggleButtonsGroup();
       toggleCommentBox();
       reset();
+      selectedText = '';
+      setLabel(false)
+      setComment({
+        id: '', heading: '', label: '', customText: '', posted_date: ''
+      });
     }
   };
 
@@ -70,6 +73,7 @@ function CommentBox(props) {
     const data = { ...comment }
     data.label = e.target.value;
     setComment(data);
+
   };
 
 
@@ -91,7 +95,7 @@ function CommentBox(props) {
           </label>
           <input
             className="comment-box__text-area"
-            placeholder="Add Heading"
+            placeholder="Add Title"
             onChange={handleCommentChange}
             value={comment.heading}
           />
@@ -99,7 +103,7 @@ function CommentBox(props) {
           {
             selectedText !== '' ?
               <textarea id="select_text" className="comment-box__text-area" value={selectedText}> </textarea> :
-              <textarea className="comment-box__text-area" placeholder="Add To Do" onChange={handleCutomChange}> </textarea>
+              <textarea className="comment-box__text-area" placeholder="Add To Do" value={comment.customText} onChange={handleCutomChange}> </textarea>
           }
           {
             label && <input
@@ -148,7 +152,8 @@ function CommentBox(props) {
             submit
           </Button>
         </form>
-      </div ></>
+      </div >
+    </>
   );
 }
 

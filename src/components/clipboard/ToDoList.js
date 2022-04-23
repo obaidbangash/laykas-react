@@ -9,9 +9,9 @@ import { IconButton, Tooltip } from "@material-ui/core";
 import {
   PaletteOutlined as PaletteIcon
 } from "@material-ui/icons";
-
-
+import Moment from "react-moment";
 const CommentsList = ({ comments, setComments }) => {
+  const Moment = require('moment')
   const theme = useTheme();
 
   const refActionColor = React.useRef();
@@ -45,55 +45,40 @@ const CommentsList = ({ comments, setComments }) => {
           alignItems="strech"
         >
           {
-            comments?.map((comment, index) => (
-              <View key={comment.id} className="selected-card" style={{ backgroundColor: theme.custom.palette.noteBackground[comment.bgColor] }}>
-                <h3>{!comment.heading ? "Title" : comment.heading}</h3>
-                {comment.selectedText ?
-                  <a href={`#${comment.id}`}>
-                    {comment.selectedText}
-                  </a> :
-                  <p>{comment.customText}</p>
-                }
-                <h6>{comment.label}</h6>
-                <Grid gap="24px"
-                  templateColumns="1fr 1fr 1fr 1fr"
-                  alignItems="center"
-                  justifyContent="center">
-                  <Tooltip title="Delete List">
-                    <IconButton
-                      size="medium"
-                      aria-label="Delete List"
-                      ref={refActionColor}
-                      onClick={() => setColorPopoverOpen(true)}
-                    >
-                      <DeleteOutlineIcon onClick={() => {
-                        onRemoveList(index)
-                      }} fontSize="medium" />
-                    </IconButton>
-                  </Tooltip>
-                  {/* <ColorPopover
-                    anchorEl={refActionColor.current}
-                    isOpen={isColorPopoverOpen}
-                    onClose={() => setColorPopoverOpen(false)}
-                    currentColor={color}
-                    onColorSelect={color => setColor(color)}
-                    setBgColor={setBgColor}
-                  />
-                  <Tooltip title="Change color">
-                    <IconButton
-                      size="medium"
-                      aria-label="change color"
-                      ref={refActionColor}
-                      onClick={() => setColorPopoverOpen(true)}
-                    >
-                      <PaletteIcon
-                        fontSize="medium"
-                      />
-                    </IconButton>
-                  </Tooltip> */}
-                </Grid>
-              </View>
-            ))
+            comments?.map((comment, index) => {
+              const dateTimeAgo = Moment(comment.posted_date).fromNow();
+              return (
+                <View key={comment.id} className="selected-card" style={{ backgroundColor: theme.custom.palette.noteBackground[comment.bgColor] }}>
+                  <h3>{!comment.heading ? "Title" : comment.heading}</h3>
+                  {comment.selectedText ?
+                    <a href={`#${comment.id}`}>
+                      {comment.selectedText}
+                    </a> :
+                    <p>{comment.customText}</p>
+                  }
+                  <h6>{comment.label}</h6>
+                  <span><b>Added:</b> {dateTimeAgo}</span>
+                  <Grid gap="24px"
+                    templateColumns="1fr 1fr 1fr 1fr"
+                    alignItems="center"
+                    justifyContent="center">
+                    <Tooltip title="Delete List">
+                      <IconButton
+                        size="medium"
+                        aria-label="Delete List"
+                        ref={refActionColor}
+                        onClick={() => setColorPopoverOpen(true)}
+                      >
+                        <DeleteOutlineIcon onClick={() => {
+                          onRemoveList(index)
+                        }} fontSize="medium" />
+                      </IconButton>
+                    </Tooltip>
+
+                  </Grid>
+                </View>
+              )
+            })
           }
         </Grid >
       </div>

@@ -6,7 +6,7 @@ import { useInView } from "react-intersection-observer";
 
 function FinancialGoal() {
   const { ref: refAnimation, inView } = useInView({
-    threshold: 1,
+    threshold: 0.45,
   });
   const classAnimPlay = inView && "anim-play";
 
