@@ -58,7 +58,7 @@ function CopyToClip(props) {
   };
 
   const updateCommentList = (newComment) => {
-    setComments([...comments, newComment]);
+    setComments([newComment, ...comments]);
   };
 
   useEffect(() => {

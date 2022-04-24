@@ -6,6 +6,7 @@
 body {
   padding: 0;
   margin: 0;
+  overflow-x: hidden;
 }
 /* global css here */
 
@@ -186,4 +187,27 @@ a:hover {
 
 .anim-delay-7 {
   animation-delay: 600ms;
+}
+
+/* Video  */
+
+#videosList {
+  max-width: 600px;
+  overflow: hidden;
+}
+
+.video {
+  background-image: url("https://img.youtube.com/vi/nZcejtAwxz4/maxresdefault.jpg");
+  height: 330px;
+  max-width: 600px;
+  margin-bottom: 50px;
+}
+.video video {
+  width: 100%;
+  height: 100%;
+}
+
+/* Hide Play button + controls on iOS */
+video::-webkit-media-controls {
+  display: none !important;
 }

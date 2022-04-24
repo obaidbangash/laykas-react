@@ -6,7 +6,7 @@ import Platform from "../components/platform/Platform";
 import Membership from "../components/membership/Membership";
 import Testimonial from "../components/testimonial/Testimonial";
 import CopyToClipBoard from "../components/clipboard/copyToClipBoard";
-
+import Video from "./Video";
 function LandingPage1() {
   return (
     <>
@@ -17,6 +17,7 @@ function LandingPage1() {
         <Platform />
         <Membership />
         <Testimonial />
+        <Video />
       </CopyToClipBoard>
     </>
   );

@@ -36,24 +36,30 @@ function CommentBox(props) {
     if (comment) {
       const uniqueId = Date.now();
 
-      wrapSelectedTextWithId(uniqueId);
-      updateCommentList({
-        id: uniqueId,
-        selectedText,
-        heading: comment.heading,
-        customText: comment.customText,
-        label: comment.label,
-        bgColor: bgColor,
-        posted_date: new Date(),
-      });
-      toggleButtonsGroup();
-      toggleCommentBox();
-      reset();
-      selectedText = '';
-      setLabel(false)
-      setComment({
-        id: '', heading: '', label: '', customText: '', posted_date: ''
-      });
+      try {
+
+
+        wrapSelectedTextWithId(uniqueId);
+        updateCommentList({
+          id: uniqueId,
+          selectedText,
+          heading: comment.heading,
+          customText: comment.customText,
+          label: comment.label,
+          bgColor: bgColor,
+          posted_date: new Date(),
+        });
+        toggleButtonsGroup();
+        toggleCommentBox();
+        reset();
+        // selectedText = '';
+        setLabel(false)
+        setComment({
+          id: '', heading: '', label: '', customText: '', posted_date: ''
+        });
+      } catch (error) {
+        console.log("something went wrong", error)
+      }
     }
   };
 
@@ -81,7 +87,9 @@ function CommentBox(props) {
   const wrapSelectedTextWithId = (uniqueId) => {
     const markWrapper = document.createElement("mark");
     markWrapper.setAttribute("id", uniqueId);
-    props.selectedRange.surroundContents(markWrapper);
+    console.log(props?.selectedRange)
+    if (!props?.selectedRange) return
+    props?.selectedRange?.surroundContents(markWrapper);
   };
   const theme = useTheme();
 
@@ -99,7 +107,7 @@ function CommentBox(props) {
             onChange={handleCommentChange}
             value={comment.heading}
           />
-          <label htmlFor="select_text" className="visuallyhidden">Selected Text</label>
+          <label htmlFor="select_text" className="visuallyhidden"> {selectedText !== '' ? "Selected Text" : "Add Custom Notes"}</label>
           {
             selectedText !== '' ?
               <textarea id="select_text" className="comment-box__text-area" value={selectedText}> </textarea> :
