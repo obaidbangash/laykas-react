@@ -7,7 +7,7 @@ import Membership from "../components/membership/Membership";
 import Testimonial from "../components/testimonial/Testimonial";
 import CopyToClipBoard from "../components/clipboard/copyToClipBoard";
 
-function LandingPage1() {
+function LandingPage() {
   return (
     <>
       <CopyToClipBoard>
@@ -22,4 +22,4 @@ function LandingPage1() {
   );
 }
 
-export default LandingPage1;
+export default LandingPage;

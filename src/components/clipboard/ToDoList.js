@@ -1,26 +1,15 @@
 import { Grid, View } from "@aws-amplify/ui-react";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import './selected-text.css'
 import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
 import { useTheme } from "@material-ui/styles";
-import ColorPopover from "./ColorPopover"
 import "./CommentBox.css";
 import { IconButton, Tooltip } from "@material-ui/core";
-import {
-  PaletteOutlined as PaletteIcon
-} from "@material-ui/icons";
-import Moment from "react-moment";
+
 const CommentsList = ({ comments, setComments }) => {
   const Moment = require('moment')
   const theme = useTheme();
-
   const refActionColor = React.useRef();
-  const [isColorPopoverOpen, setColorPopoverOpen] = useState(false);
-  const [color, setColor] = useState("");
-  const [bgColor, setBgColor] = useState('white');
-
-
-
 
   // delete List
   const onRemoveList = (i) => {
@@ -28,13 +17,6 @@ const CommentsList = ({ comments, setComments }) => {
     const updatedData = data.splice(i, 1)
     setComments(data)
   }
-
-  useEffect(() => {
-    if (!bgColor) {
-      setBgColor(comments.bgColor)
-    }
-  }, [comments.bgColor])
-
 
   return (
 
@@ -67,11 +49,11 @@ const CommentsList = ({ comments, setComments }) => {
                         size="medium"
                         aria-label="Delete List"
                         ref={refActionColor}
-                        onClick={() => setColorPopoverOpen(true)}
+                        onClick={() => {
+                          onRemoveList(index);
+                        }}
                       >
-                        <DeleteOutlineIcon onClick={() => {
-                          onRemoveList(index)
-                        }} fontSize="medium" />
+                        <DeleteOutlineIcon fontSize="medium" />
                       </IconButton>
                     </Tooltip>
 

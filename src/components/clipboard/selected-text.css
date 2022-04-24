@@ -35,3 +35,7 @@
   align-items: flex-start;
   flex-direction: column;
 }
+.selected-section .selected-card a {
+  word-break: break-all;
+  text-transform: lowercase;
+}

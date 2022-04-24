@@ -31,18 +31,31 @@ function Content(props) {
     }
   };
 
+  const onCopyAsset = (rect, url) => {
+    const { setBtnsGroupPosition, showButtonsGroup, setSelectedText } = props;
+    setBtnsGroupPosition(rect);
+    showButtonsGroup();
+    setSelectedText(url)
+  }
 
+  const childrenWithProps = props.children.map((child, index) => {
+    // Checking isValidElement is the safe way and avoids a typescript
+    // error too.
+    if (React.isValidElement(child)) {
+      return React.cloneElement(child, { onCopyAsset });
+    }
+    return child;
+  });
 
   return (
-    <div>
-      <section
-        onMouseUp={bubbleUpSelectedRegion}
-        onMouseMove={bubbleUpSelectedRegion}
-        onKeyUp={bubbleUpEditableSelectedRegion}
-      >
-        {props.children}
-      </section>
-    </div>
+    <section
+      onMouseUp={bubbleUpSelectedRegion}
+      onMouseMove={bubbleUpSelectedRegion}
+      onKeyUp={bubbleUpEditableSelectedRegion}
+      onCopyAsset={onCopyAsset}
+    >
+      {childrenWithProps}
+    </section>
   );
 }
 

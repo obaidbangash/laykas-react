@@ -1,5 +1,5 @@
 import React from 'react';
-import LandingPage1 from './pages/LandingPage1';
+import LandingPage from './pages/LandingPage';
 import AboutUs from './pages/AboutUs';
 import "./App.css";
 import FaqPage from './pages/FaqPage';
@@ -16,7 +16,7 @@ function App() {
         <Router>
           <Header />
           <Routes>
-            <Route path="/" element={<LandingPage1 />} />
+            <Route path="/" element={<LandingPage />} />
             <Route exact path="/about" element={<AboutUs />} />
             <Route exact path="/faq" element={<FaqPage />} />
           </Routes>
