@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 function Video(props) {
-  console.log("props", props);
   const videoTag = useRef();
 
   function hoverVideo() {
@@ -13,7 +12,7 @@ function Video(props) {
   const copyLinkToClipboard = (e) => {
     const rect = e.target.getBoundingClientRect();
     const url = videoTag.current.children[0].getAttribute("src");
-    props.onCopyVideo(rect, url);
+    props?.onCopyAsset(rect, url);
   };
   return (
     <div className="container">
@@ -27,14 +26,8 @@ function Video(props) {
             onMouseEnter={hoverVideo}
             onMouseLeave={hideVideo}
           >
-            <source
-              src="https://giant.gfycat.com/VerifiableTerrificHind.mp4"
-              type="video/mp4"
-            />
-            <source
-              src="https://giant.gfycat.com/VerifiableTerrificHind.webm"
-              type="video/webm"
-            />
+            <source src={props.mp4Src} type="video/mp4" />
+            <source src={props.webmSrc} type="video/webm" />
           </video>
         </div>
       </div>

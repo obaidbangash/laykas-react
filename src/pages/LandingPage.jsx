@@ -6,8 +6,8 @@ import Platform from "../components/platform/Platform";
 import Membership from "../components/membership/Membership";
 import Testimonial from "../components/testimonial/Testimonial";
 import CopyToClipBoard from "../components/clipboard/copyToClipBoard";
-import Video from "./Video";
-function LandingPage1() {
+
+function LandingPage() {
   return (
     <>
       <CopyToClipBoard>
@@ -17,10 +17,9 @@ function LandingPage1() {
         <Platform />
         <Membership />
         <Testimonial />
-        <Video />
       </CopyToClipBoard>
     </>
   );
 }
 
-export default LandingPage1;
+export default LandingPage;

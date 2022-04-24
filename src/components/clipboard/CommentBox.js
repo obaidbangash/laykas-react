@@ -87,7 +87,6 @@ function CommentBox(props) {
   const wrapSelectedTextWithId = (uniqueId) => {
     const markWrapper = document.createElement("mark");
     markWrapper.setAttribute("id", uniqueId);
-    console.log(props?.selectedRange)
     if (!props?.selectedRange) return
     props?.selectedRange?.surroundContents(markWrapper);
   };

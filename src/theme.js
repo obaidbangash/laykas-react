@@ -1,7 +1,7 @@
 import { red, amber, grey } from "@material-ui/core/colors";
-import { createMuiTheme, responsiveFontSizes } from "@material-ui/core/styles";
+import { createTheme, responsiveFontSizes } from "@material-ui/core/styles";
 
-const lightMuiTheme = createMuiTheme({
+const lightMuiTheme = createTheme({
   type: "light",
   palette: {
     primary: {

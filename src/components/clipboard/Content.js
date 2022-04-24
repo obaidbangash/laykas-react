@@ -31,10 +31,8 @@ function Content(props) {
     }
   };
 
-  const onCopyVideo = (rect, url) => {
+  const onCopyAsset = (rect, url) => {
     const { setBtnsGroupPosition, showButtonsGroup, setSelectedText } = props;
-
-
     setBtnsGroupPosition(rect);
     showButtonsGroup();
     setSelectedText(url)
@@ -44,22 +42,20 @@ function Content(props) {
     // Checking isValidElement is the safe way and avoids a typescript
     // error too.
     if (React.isValidElement(child)) {
-      return React.cloneElement(child, { onCopyVideo });
+      return React.cloneElement(child, { onCopyAsset });
     }
     return child;
   });
 
   return (
-    <div>
-      <section
-        onMouseUp={bubbleUpSelectedRegion}
-        onMouseMove={bubbleUpSelectedRegion}
-        onKeyUp={bubbleUpEditableSelectedRegion}
-        onCopyVideo={onCopyVideo}
-      >
-        {childrenWithProps}
-      </section>
-    </div>
+    <section
+      onMouseUp={bubbleUpSelectedRegion}
+      onMouseMove={bubbleUpSelectedRegion}
+      onKeyUp={bubbleUpEditableSelectedRegion}
+      onCopyAsset={onCopyAsset}
+    >
+      {childrenWithProps}
+    </section>
   );
 }
 

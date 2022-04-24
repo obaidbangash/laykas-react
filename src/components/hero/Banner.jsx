@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useEffect, useRef, useCallback, useState } from "react";
 import { Grid, View, Button } from "@aws-amplify/ui-react";
 import "@aws-amplify/ui-react/styles.css";
 import "./banner.css";
 import image from "../../assets/acf-img.png";
 import bannerBg from "../../assets/banner-bg.png";
 import { useInView } from "react-intersection-observer";
+import Img from "../clipboard/components/Img";
 
-function Banner() {
+function Banner(props) {
   const { ref: refAnimation, inView } = useInView({
     threshold: 0.45,
   });
@@ -14,15 +15,15 @@ function Banner() {
   const texts = ["Retirement", "Dreamhome", "College Plan", " Whatever"]; // changing text
 
   const Texts = (props) => {
-    const [state, setState] = React.useState({
+    const [state, setState] = useState({
       left: "",
       right: "",
       texts: props.texts,
       current: props.texts[0],
     });
-    const stay = React.useRef(false);
-    const staybt = React.useRef(false);
-    const update = React.useCallback(() => {
+    const stay = useRef(false);
+    const staybt = useRef(false);
+    const update = useCallback(() => {
       const addNextChar = () => {
         setState({
           ...state,
@@ -63,7 +64,7 @@ function Banner() {
         else deleteLastChar();
       } else addNextChar();
     }, [stay, staybt, setState, state]);
-    React.useEffect(() => {
+    useEffect(() => {
       setTimeout(
         () => {
           if (state.texts[0].length === 1) stay.current = true;
@@ -126,7 +127,12 @@ function Banner() {
             </View>
             <View className={`anim-fade-in-up ${classAnimPlay}`}>
               <div className="acf-img-wrapper">
-                <img src={image} alt="banner img" />
+                <Img
+                  src={image}
+                  alt="banner-img"
+                  // need to pass this as a props
+                  onCopyAsset={props.onCopyAsset}
+                />
               </div>
             </View>
           </Grid>

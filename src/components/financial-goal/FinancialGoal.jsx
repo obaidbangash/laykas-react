@@ -3,8 +3,9 @@ import { Grid, View, Button } from "@aws-amplify/ui-react";
 import financialImage from "../../assets/financial-img.png";
 import "./financial-goal.css";
 import { useInView } from "react-intersection-observer";
+import Img from "../clipboard/components/Img";
 
-function FinancialGoal() {
+function FinancialGoal(props) {
   const { ref: refAnimation, inView } = useInView({
     threshold: 0.45,
   });
@@ -22,7 +23,12 @@ function FinancialGoal() {
             ref={refAnimation}
           >
             <div className={`anim-fade-in-up financial-img ${classAnimPlay}`}>
-              <img src={financialImage} alt="financialImage" />
+              <Img
+                src={financialImage}
+                onCopyAsset={props.onCopyAsset}
+                alt="financialImage"
+              />
+              {/* <img src={financialImage} alt="financialImage" /> */}
             </div>
             <View className={`anim-fade-in-up ${classAnimPlay}`}>
               <div className="financial-content">
