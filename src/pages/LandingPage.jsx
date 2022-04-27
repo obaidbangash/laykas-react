@@ -6,6 +6,7 @@ import Platform from "../components/platform/Platform";
 import Membership from "../components/membership/Membership";
 import Testimonial from "../components/testimonial/Testimonial";
 import CopyToClipBoard from "../components/clipboard/copyToClipBoard";
+import Video from "../components/clipboard/Video";
 
 function LandingPage() {
   return (
@@ -17,6 +18,10 @@ function LandingPage() {
         <Platform />
         <Membership />
         <Testimonial />
+        <Video
+          mp4Src="https://giant.gfycat.com/VerifiableTerrificHind.mp4"
+          webmSrc="https://giant.gfycat.com/VerifiableTerrificHind.webm"
+        />
       </CopyToClipBoard>
     </>
   );
