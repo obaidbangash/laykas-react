@@ -1,0 +1,162 @@
+.summary-wrapper {
+  padding: 123px 0 40px;
+  background-size: contain;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-color: #e5e5e5;
+  overflow-x: hidden;
+}
+
+.summary-wrapper .summary-container {
+  max-width: 1341px;
+  margin: 0 auto;
+}
+.summary-wrapper .summary-container > h2 {
+  font-size: 38px;
+  line-height: 62.7px;
+  font-weight: 600;
+  font-family: "Work Sans", sans-serif;
+  color: #000;
+  margin-bottom: 19px;
+}
+
+.summary-wrapper .user-info {
+  margin-bottom: 26px;
+  padding: 29px 26px;
+  position: relative;
+}
+.summary-wrapper .user-icon {
+  position: absolute;
+  bottom: 6px;
+  right: 26px;
+  height: 23px;
+}
+.summary-wrapper .employee-status {
+  padding: 31px;
+}
+
+.summary-wrapper .status-shadow {
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  background-color: #fff;
+  border-radius: 15px;
+}
+
+.summary-wrapper .take-away {
+  padding: 40px;
+  height: 100%;
+}
+.take-away h3 {
+  font-size: 28px;
+  line-height: 46.2px;
+  font-weight: 600;
+  font-family: "Work Sans", sans-serif;
+  color: #000;
+  margin-bottom: 25px;
+}
+.take-away ol {
+  list-style: none;
+  padding: 0;
+  counter-reset: li;
+}
+.take-away ol li {
+  padding: 0 0 0 40px;
+  position: relative;
+  font-size: 14px;
+  line-height: 1.3;
+  font-weight: 600;
+  font-family: "Work Sans", sans-serif;
+  margin-bottom: 32px;
+  counter-increment: li;
+}
+.take-away ol li::after {
+  content: counter(li);
+  position: absolute;
+  top: 0%;
+  left: 0;
+  width: 25px;
+  height: 35px;
+  border-radius: 50%;
+  color: #fff;
+  background-color: #000;
+  text-align: center;
+  font-size: 17px;
+  line-height: 1.3;
+  font-family: "Work Sans", sans-serif;
+}
+.user-info h4 {
+  font-size: 25px;
+  line-height: 46.2px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: "Work Sans", sans-serif;
+  color: #c0392b;
+}
+.financial-btn.main-btn {
+  text-align: right;
+  padding: 0;
+  margin-top: 20px;
+}
+.financial-btn.main-btn > a {
+  background-color: #125ce4;
+  text-transform: capitalize;
+  letter-spacing: 0.8px;
+  font-family: "Work Sans", sans-serif;
+}
+.financial-btn.main-btn span {
+  color: #fff;
+  font-weight: 600;
+  padding: 0;
+  display: flex;
+}
+.financial-btn.main-btn .MuiButton-endIcon {
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 2px;
+}
+.financial-btn.main-btn .MuiButton-endIcon svg {
+  font-size: 14px;
+}
+.financial-btn.main-btn .MuiButton-endIcon svg path {
+  fill: #125ce4;
+}
+/* responsive */
+@media (max-width: 1440px) {
+  .summary-wrapper .summary-container {
+    max-width: 100%;
+    padding: 0 40px;
+  }
+}
+@media (max-width: 1099px) {
+  .summary-wrapper .summary-container {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+  .user-info h4 {
+    font-size: 18px;
+    line-height: 1.3;
+  }
+  .status-wrapper h6 {
+    font-size: 16px;
+    line-height: 1.3;
+  }
+  .summary-wrapper .employee-status {
+    padding: 31px 20px;
+  }
+  .summary-wrapper .user-info {
+    padding: 29px 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .summary-wrapper .summary-container > h2 {
+    font-size: 28px;
+    line-height: 1.4;
+  }
+  .summary-wrapper .take-away {
+    padding: 40px 20px;
+  }
+  .take-away h3 {
+    font-size: 24px;
+    line-height: 1.3;
+  }
+}
