@@ -1,0 +1,36 @@
+.status-wrapper {
+  padding-left: 15px;
+  border-left: 3px solid rgba(0, 0, 0, 0.64);
+}
+
+.status-wrapper h6 {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 36.3px;
+  font-family: "Work Sans", sans-serif;
+  color: #c0392b;
+}
+
+.employee-statement span {
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "Work Sans", sans-serif;
+  line-height: 29px;
+  color: #000000;
+  max-width: 210px;
+  display: block;
+}
+
+@media (max-width: 1440px) {
+  .status-wrapper h6 {
+    font-size: 20px;
+  }
+}
+@media (max-width: 1344px) {
+  .status-wrapper h6 {
+    font-size: 16px;
+  }
+  .user-info h4 {
+    font-size: 20px;
+  }
+}

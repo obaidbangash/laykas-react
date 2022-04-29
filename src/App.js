@@ -1,5 +1,6 @@
 import React from 'react';
 import LandingPage from './pages/LandingPage';
+import Summary from './pages/SummaryPage';
 import AboutUs from './pages/AboutUs';
 import "./App.css";
 import FaqPage from './pages/FaqPage';
@@ -19,6 +20,7 @@ function App() {
             <Route path="/" element={<LandingPage />} />
             <Route exact path="/about" element={<AboutUs />} />
             <Route exact path="/faq" element={<FaqPage />} />
+            <Route exact path="/summary" element={<Summary />} />
           </Routes>
         </Router>
       </ThemeProvider>
