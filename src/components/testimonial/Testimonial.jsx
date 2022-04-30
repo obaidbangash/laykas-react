@@ -24,7 +24,14 @@ function Testimonial() {
           <Button className="main-btn" style={{ backgroundColor: "#125CE4" }}>
             View all <span>&#8594;</span>
           </Button>
-          <Grid templateColumns="1fr 1fr 1fr" gap="22px" alignItems="center">
+          <Grid
+            templateColumns={{
+              base: "1fr",
+              medium: "1fr 1fr 1fr",
+            }}
+            gap="22px"
+            alignItems="center"
+          >
             <View>
               <TestimonialCard
                 review="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."

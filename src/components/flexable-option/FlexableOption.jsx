@@ -18,11 +18,12 @@ function FlexableOption() {
     >
       <div className="container">
         <Grid
-          templateColumns="1fr 1fr"
-          templateRows="10rem 10rem"
-          gap="var(--amplify-space-small)"
+          templateColumns={{
+            base: "1fr",
+            medium: "1fr 1fr",
+          }}
+          gap="24px"
           alignItems="center"
-          display="flex"
           ref={refAnimation}
         >
           <View className={`anim-fade-in-up flexable-content ${classAnimPlay}`}>

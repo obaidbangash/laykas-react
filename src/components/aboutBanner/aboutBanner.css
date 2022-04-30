@@ -20,3 +20,10 @@
 .about-banner .container {
   width: 100%;
 }
+
+@media (max-width: 767px) {
+  .about-banner h1 {
+    font-size: 35px;
+    line-height: 1.3;
+  }
+}

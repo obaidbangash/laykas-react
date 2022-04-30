@@ -9,7 +9,14 @@ function ContactUs() {
     <div className="contact-us">
       <div className="container">
         <div className="contact-us-content">
-          <Grid gap="0" templateColumns="1fr 1fr" alignItems="center">
+          <Grid
+            gap="24px 0"
+            templateColumns={{
+              base: "1fr",
+              medium: "1fr 1fr",
+            }}
+            alignItems="center"
+          >
             <View className="contact-details">
               <h3 className="h3">Contact Us</h3>
               <p className="p">

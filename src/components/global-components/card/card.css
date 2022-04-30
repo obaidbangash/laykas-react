@@ -36,3 +36,25 @@
   margin-left: auto;
   color: #125ce4;
 }
+
+@media (max-width: 1280px) {
+  .card-wrapper .card-body b.p {
+    min-height: 49px;
+  }
+  .card-wrapper {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+@media (max-width: 991px) {
+  .card-wrapper .card-body b.p {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .card-wrapper {
+    max-width: 387px;
+    margin: 0 auto;
+  }
+}

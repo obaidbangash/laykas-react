@@ -47,3 +47,17 @@ header ul li a {
 .header-wrapper nav {
   margin-right: 20px;
 }
+
+@media (max-width: 991px) {
+  .user-contact {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  header {
+    padding: 18px;
+  }
+  .header-wrapper nav {
+    margin: 0;
+  }
+}

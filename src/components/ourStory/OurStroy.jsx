@@ -6,7 +6,14 @@ function OurStroy() {
   return (
     <div className="our-story">
       <div className="container">
-        <Grid gap="24px" templateColumns="1fr 1fr" alignItems="center">
+        <Grid
+          gap="24px"
+          templateColumns={{
+            base: "1fr",
+            medium: "1fr 1fr",
+          }}
+          alignItems="center"
+        >
           <View className="our-story-content">
             <h3 className="h3">Our story</h3>
             <p className="p">
@@ -30,7 +37,10 @@ function OurStroy() {
         <Grid
           className="who-we-wrapper"
           gap="24px"
-          templateColumns="1fr 1fr"
+          templateColumns={{
+            base: "1fr",
+            small: "1fr 1fr",
+          }}
           alignItems="center"
         >
           <View className="who-we-are">

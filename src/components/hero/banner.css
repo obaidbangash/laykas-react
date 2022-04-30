@@ -55,3 +55,16 @@
 .acf-img-wrapper img {
   width: 100%;
 }
+
+@media (max-width: 991px) {
+  .acf-text h1 {
+    font-size: 35px;
+    line-height: 1.3;
+  }
+}
+
+@media (max-width: 767px) {
+  .acf-wrapper {
+    padding-bottom: 70px;
+  }
+}

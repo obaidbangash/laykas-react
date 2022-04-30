@@ -45,3 +45,30 @@
 .guarantee-card .guarantee-expend p {
   margin-bottom: 45px;
 }
+
+@media (max-width: 1200px) {
+  .guarantee-card {
+    padding: 32px 20px;
+  }
+  .guarantee-card ul li {
+    align-items: flex-start;
+  }
+  .guarantee-card ul li img {
+    margin-top: 5px;
+  }
+}
+@media (max-width: 991px) {
+  .guarantee-card ul li {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .guarantee-card .guarantee-expend {
+    padding-left: 0;
+  }
+  .guarantee-item {
+    padding-right: 0;
+    border: none;
+  }
+}

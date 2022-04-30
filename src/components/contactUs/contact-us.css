@@ -48,3 +48,9 @@
   background-color: #f9b934;
   margin-right: 15px;
 }
+
+@media (max-width: 767px) {
+  .contact-us .contact-icons {
+    margin-left: 0;
+  }
+}

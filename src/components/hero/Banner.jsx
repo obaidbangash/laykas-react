@@ -92,8 +92,11 @@ function Banner(props) {
       <div className="acf-container">
         <div className="acf-content">
           <Grid
-            gap="var(--amplify-space-small)"
-            templateColumns="1fr 1fr"
+            gap="24px"
+            templateColumns={{
+              base: "1fr",
+              medium: "1fr 1fr",
+            }}
             alignItems="center"
             ref={refAnimation}
           >

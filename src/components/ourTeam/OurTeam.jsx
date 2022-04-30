@@ -23,7 +23,10 @@ function OurTeam() {
 
         <Grid
           gap="24px"
-          templateColumns="1fr 1fr 1fr"
+          templateColumns={{
+            base: "1fr",
+            medium: "1fr 1fr 1fr",
+          }}
           alignItems="center"
           className="team-cards-wrapper"
         >

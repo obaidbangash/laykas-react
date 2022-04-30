@@ -25,10 +25,13 @@ function Platform() {
           </p>
         </div>
         <Grid
-          templateColumns="1fr 1fr 1fr 1fr"
+          templateColumns={{
+            base: "1fr",
+            large: "1fr 1fr 1fr 1fr",
+            medium: "2fr 2fr",
+          }}
           gap="26px"
-          // gap="var(--amplify-space-small)"
-          alignItems="center"
+          alignItems="strech"
           ref={refAnimation}
         >
           <Card

@@ -8,7 +8,13 @@ function Guarantee() {
     <div className="guarantee-wrapper">
       <div className="container">
         <div className="guarantee-card">
-          <Grid templateColumns="1fr 1fr" gap="0">
+          <Grid
+            templateColumns={{
+              base: "1fr",
+              medium: "1fr 1fr",
+            }}
+            gap="24px 0"
+          >
             <View className="guarantee-item">
               <h4 className="p">Our guarantee</h4>
               <p>From open source to premium services.</p>
