@@ -37,3 +37,10 @@
   line-height: 19px;
   text-transform: capitalize;
 }
+
+@media (max-width: 767px) {
+  .team-card-wrapper {
+    max-width: 385px;
+    margin: 0 auto;
+  }
+}

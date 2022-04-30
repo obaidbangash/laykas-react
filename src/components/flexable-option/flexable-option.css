@@ -29,3 +29,14 @@
   height: 100%;
   object-fit: contain;
 }
+
+@media (max-width: 991px) {
+  .flexable-img {
+    height: auto;
+  }
+}
+@media (max-width: 767px) {
+  .flexable-img img {
+    margin: 0 auto;
+  }
+}

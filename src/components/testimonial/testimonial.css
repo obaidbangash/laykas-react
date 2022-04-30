@@ -17,3 +17,10 @@
 .testimonial-wrapper .main-btn:hover span {
   color: #000000;
 }
+
+@media (max-width: 767px) {
+  .testimonial-card-wrapper {
+    max-width: 387px;
+    margin: 0 auto;
+  }
+}

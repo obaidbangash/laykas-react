@@ -15,7 +15,14 @@ function Company() {
     <div className="company-wrapper">
       <div className="container">
         <div className="company-card">
-          <Grid gap="0" templateColumns="1fr 1fr" alignItems="center">
+          <Grid
+            gap="24px 0"
+            templateColumns={{
+              base: "1fr",
+              medium: "1fr 1fr",
+            }}
+            alignItems="center"
+          >
             <View className="companies-content">
               <h3 className="h3">Trusted by you favorite companies</h3>
               <p className="p">
@@ -26,7 +33,11 @@ function Company() {
             <View className="company-logo">
               <Grid
                 gap="24px"
-                templateColumns="1fr 1fr 1fr 1fr"
+                templateColumns={{
+                  base: "2fr 2fr",
+                  small: "1fr 1fr 1fr",
+                  large: "1fr 1fr 1fr 1fr",
+                }}
                 alignItems="center"
               >
                 <View>

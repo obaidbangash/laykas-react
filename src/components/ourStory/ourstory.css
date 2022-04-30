@@ -33,3 +33,17 @@
   transform: translateX(-50%);
   background-color: #bdbdbd;
 }
+
+@media (max-width: 991px) {
+  .our-story .who-we-wrapper::after {
+    width: calc(100% - 40px);
+  }
+}
+@media (max-width: 767px) {
+  .our-story .our-story-img {
+    margin: 0 auto;
+  }
+  .our-story .h3 {
+    margin-bottom: 10px;
+  }
+}

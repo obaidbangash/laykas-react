@@ -21,8 +21,11 @@ function Membership() {
         >
           <div className="container">
             <Grid
-              templateColumns="1fr 1fr"
-              gap="var(--amplify-space-small)"
+              templateColumns={{
+                base: "1fr",
+                medium: "1fr 1fr",
+              }}
+              gap="24px"
               alignItems="center"
             >
               <View
@@ -37,8 +40,11 @@ function Membership() {
                   sed ut.
                 </p>
                 <Grid
-                  templateColumns="1fr 1fr 1fr"
-                  gap="var(--amplify-space-small)"
+                  templateColumns={{
+                    base: "1fr",
+                    small: "1fr 1fr 1fr",
+                  }}
+                  gap="24px 0"
                   alignItems="flex-start"
                 >
                   <View className="membership-package">

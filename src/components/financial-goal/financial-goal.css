@@ -28,3 +28,9 @@
   padding-left: 15px;
   color: #125ce4;
 }
+
+@media (max-width: 767px) {
+  .financial-goal .financial-img {
+    margin: 0 auto;
+  }
+}
